@@ -1,0 +1,58 @@
+1. select title_name, type from titles where pubdate < (select min(pubdate) from titles where type = 'biography');
++-------------------------------------+------------+
+| title_name                          | type       |
++-------------------------------------+------------+
+| 200 Years of German Humor           | history    |
+| But I Did It Unconsciously          | psychology |
+| What Are The Civilian Applications? | history    |
++-------------------------------------+------------+
+
+2. select title_name, type from titles where pub_id = "P01";
++----------------------------+-----------+
+| title_name                 | type      |
++----------------------------+-----------+
+| 1977!                      | history   |
+| How About Never?           | biography |
+| Not Without My Faberge Egg | biography |
+| Spontaneous, Not Annoying  | biography |
++----------------------------+-----------+
+
+3. select pub_name from publishers where pub_id NOT IN (select pub_id from titles);
++-----------+
+| pub_name  |
++-----------+
+| PTR Press |
++-----------+
+
+4. select pub_name, type from titles, publishers where titles.pub_id=publishers.pub_id and type = 'computer';
++-----------------+----------+
+| pub_name        | type     |
++-----------------+----------+
+| Core Dump Books | computer |
++-----------------+----------+
+
+5. select au_fname, au_lname, COUNT(title_authors.au_id) as Books from authors INNER JOIN title_authors on authors.au_id=title_authors.au_id group by authors.au_id having count(title_authors.au_id) > 1;
++----------+-----------+-------+
+| au_fname | au_lname  | Books |
++----------+-----------+-------+
+| Sarah    | Buchman   |     3 |
+| Hallie   | Hull      |     2 |
+| Klee     | Hull      |     4 |
+| Wendy    | Heydemark |     4 |
+|          | Kellsey   |     3 |
++----------+-----------+-------+
+
+6. select pub_name from publishers, titles where publishers.pub_id=titles.pub_id AND price = (select min(price) from titles);
++-------------------+
+| pub_name          |
++-------------------+
+| Tenterhooks Press |
++-------------------+
+
+7. select au_fname, au_lname from authors, title_authors, titles where (authors.au_id=title_authors.au_id AND title_authors.title_id=titles.title_id) AND pages = (select max(pages) from titles);
++-----------+----------+
+| au_fname  | au_lname |
++-----------+----------+
+| Christian | Kells    |
++-----------+----------+
+
