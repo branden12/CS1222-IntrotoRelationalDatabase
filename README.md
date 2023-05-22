@@ -1,4 +1,4 @@
-# Homework 2
+# Homework 3
 
 ## Purpose
 
@@ -16,24 +16,29 @@ Aggregations a very powerful means to get statistics about large amounts of data
 ### Question: Design the following queries, using the lyrics.sql schema:
 
 #### Part 1
-- List the first name, last name, home phone, and gender of all members from Georgia who either have a home phone in area code 822 or are  female
 
-- List all the information of tracks that do not have an MP3.
+- List the artistname and entrydate of the artist with the earliest entry date.
 
-- List the TitleID, Title, and UPC of any titles whose UPC end with '2'
+- List the track titles of all titles in the 'alternative' genre. 
 
-- List the artist name and web address of any artists who has a web address. Rename the attributes artistname, webaddress as Artist Name, Web Address.
+- List all genres from the Genre table that are not represented in the Titles table.
 
-- List the TitleID, TrackNum, and TrackTitle of all tracks with 'Song' at the beginning of the TrackTitle
+- List the track title with longest length in seconds.
+
+- List length of the longest RealAud track in the 'metal' genre
+
+- List track titles and lengths of tracks with a length longer than all tracks of the 'metal' genre. (Hint: This requires sub-query within a sub-query)
 
 #### Part 2
 
-- Report the average, shortest and longest track length in minutes of all tracks.
+- List the CD title and the title of all tracks recorded in StudioID 1
 
-- Report the number of male members who are in US.
+- List each title from the Title table along with the name of the studio where it was recorded.
 
-- Report the number of tracks for each TitleID
+- Find the name of the sales person who works with the member with last name 'Alvarez'
 
-- Report the total time in minutes for each titleid
+- List name of members from California (CA) and their salespeople.
 
-- Report the number of members by state and gender. Sort the results by the region
+- List the names of all artists who have recorded more than one titles and the number of titles they have.   
+
+- Report the name of the title and number of tracks for any title that have fewer than 9 tracks.
