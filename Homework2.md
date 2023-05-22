@@ -1,7 +1,4 @@
-
 # Homework 1
-
-
 
 ## Purpose
 
@@ -33,5 +30,3 @@ These are the basic commands that will make up your foundational knowledge of SQ
 - List the Member ID and Country of all members in Canada. (Members table)
 
 - List the first name, last name, and region of all members from Virginia who either have a work phone or an email address. (Members Table)
-
-
