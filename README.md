@@ -1,44 +1,25 @@
-# Homework 3
+
+# Homework 4
 
 ## Purpose
 
-Purpose 
+The goal of this module is to learn how to use functions to better massage your data.
 
-The purpose of this assignment is to
+## Knowledge
 
-- review the basic syntax of a SQL query, and
-
-- use aggregate functions to group the values of an entire table or several rows to form a single summary value.
-
-Aggregations a very powerful means to get statistics about large amounts of data. Oftentimes it isn't enough to query records, you may need to calculate summaries of a table or subgroups of a table. Aggregation operations group values from multiple rows together, and can perform variety of operations on the grouped data to return a single result.
+Functions are a powerful tool that gives you more control over how to display data from your queries. Functions have a similar syntax to aggregations. However, while aggregations allow you to perform variety of operations on several rows to return a single result, functions allow you to perform an operation on each row in a query result. 
 ## Tasks
 
-### Question: Design the following queries, using the lyrics.sql schema:
+### Study the Books database and create the following queries. (Note: you need to run books.sql to an external site. to create the tables).
 
-#### Part 1
+#### Refer to the MySQL Setup assignment to refresh your memory.
 
-- List the artistname and entrydate of the artist with the earliest entry date.
+- List the number of books, the minimum price, maximum price, and average sales of history books. The format of output is: Number Min Price Max Price Average Sale
 
-- List the track titles of all titles in the 'alternative' genre. 
+- List the number of books and the average number of pages published by pub_id P01.
 
-- List all genres from the Genre table that are not represented in the Titles table.
+- List the number of books and the total sales of the books with price greater than $15.
 
-- List the track title with longest length in seconds.
+- For each book type, list the the number of books and the average price. Sort the results by the number of books
 
-- List length of the longest RealAud track in the 'metal' genre
-
-- List track titles and lengths of tracks with a length longer than all tracks of the 'metal' genre. (Hint: This requires sub-query within a sub-query)
-
-#### Part 2
-
-- List the CD title and the title of all tracks recorded in StudioID 1
-
-- List each title from the Title table along with the name of the studio where it was recorded.
-
-- Find the name of the sales person who works with the member with last name 'Alvarez'
-
-- List name of members from California (CA) and their salespeople.
-
-- List the names of all artists who have recorded more than one titles and the number of titles they have.   
-
-- Report the name of the title and number of tracks for any title that have fewer than 9 tracks.
+- For each book type, list the book type and the average number of pages in the books with price greater than $10 in each category, excluding the types where the average number of pages is less than 200. Sort the results by the average number of pages.
