@@ -1,26 +1,30 @@
 
-# Homework 5
+# Homework 6
 
 ## Purpose
 
-Now that you have established a strong foundation for SQL, it's time to see how tall you can build upon that knowledge.
+The goal of this module is to familiarize yourself with some of the ways in which database schemas use constraints to ensure consistency.
 
 ## Tasks
 
-### You will need to use the Books database to answer the questions below. Use any method that you want in order to solve the problems (Subqueries, inner-join/equi-join. outer join, EXISTS)
+### Data Manipulation
 
-#### Design the following queries.
+#### In this lab, you will be manipulating the database to add, delete and modify the values in the database. Please use a "select * from..." after each query to show the effects of your data manipulation query.
 
-- List the title_name and book type of the books that are published earlier than the earliest biography book
+- The title 'Time Flies' now has a new track, the 11th track 'Spring', which is 150 seconds long and has only a MP3 file. Insert the new track into Tracks table (Don’t hand-code any data for insert that can be looked up from the Titles table).
 
-- List the title_name and book type of the books published by 'Abatis Publishers'
+- Create a new table called Members2 with the same fields as the Members table. (Use DESCRIBE to check if Members2 table is created). 
 
-- Find the name(s) of the publisher(s) that have not published any book
+- Populate Members2 with the content of the Members table.
 
-- Find the name(s) of the publisher(s) who have published the computer book.
+- The area code for Columbus, Ohio has been changed from 277 to 899. Update the homephone and workphone numbers of all members in Members2 table accordingly.
 
-- Find the name(s) of the author(s) that have authored more than one books.
+- Delete all members who work for the artist 'Sonata' from Members2 table.
 
-- Find the name(s) of the publisher(s) who published the least expensive book.
+### Extra Credit
 
-- Find the name(s) of the author(s) who wrote the book with the greatest number of pages.
+#### The following are harder questions. They have to do with either multiple joins on tables, multi insert queries, or using the CASE keywords.
+
+- Members Doug Finney and Terry Irving are forming a new artist to be called "Doug and Terry." Add this record to the Artists table, using ArtistID 13, the address information of Doug Finney, no web address, today's entry date, and no lead source. Don’t hand-code any data for insert that can be looked up from the Members table.
+
+- Add the appropriate new records to the XrefArtistsMembers table for the artist "Doug and Terry". Doug is the responsible party. Don’t hand-code any data for insert that can be looked up from the Members table. (This will use the CASE keyword to get it to work. Go back to the Functions ppt to see an example of how CASE works)
