@@ -2,15 +2,8 @@
 
 ## Purpose
 
-Purpose 
+The goal of this module is to learn how to query multiple tables at once.
 
-The purpose of this assignment is to
-
-- review the basic syntax of a SQL query, and
-
-- use aggregate functions to group the values of an entire table or several rows to form a single summary value.
-
-Aggregations a very powerful means to get statistics about large amounts of data. Oftentimes it isn't enough to query records, you may need to calculate summaries of a table or subgroups of a table. Aggregation operations group values from multiple rows together, and can perform variety of operations on the grouped data to return a single result.
 ## Tasks
 
 ### Question: Design the following queries, using the lyrics.sql schema:
