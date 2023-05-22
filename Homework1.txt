@@ -1,0 +1,87 @@
+select title, upc, genre from titles;
++--------------------+------------+-------------+
+| title              | upc        | genre       |
++--------------------+------------+-------------+
+| Meet the Neurotics | 2727366627 | alternative |
+| Smell the Glove    | 1283772282 | metal       |
+| Time Flies         | 1882344222 | alternative |
+| Neurotic Sequel    | 2828830202 | alternative |
+| Sonatas            | 3999320021 | classical   |
+| Louis at the Keys  | 3838227111 | jazz        |
++--------------------+------------+-------------+
+
+select * from titles where artistid = '2';
++---------+----------+-------------------+----------+------------+-------+
+| TitleID | ArtistID | Title             | StudioID | UPC        | Genre |
++---------+----------+-------------------+----------+------------+-------+
+|       7 |        2 | Louis at the Keys |        3 | 3838227111 | jazz  |
++---------+----------+-------------------+----------+------------+-------+
+
+select firstname, lastname, homephone, email from members;
++-----------+-----------+------------+------------------------+
+| firstname | lastname  | homephone  | email                  |
++-----------+-----------+------------+------------------------+
+| Roberto   | Alvarez   | 7651552983 | ral@mightyhostl.com    |
+| Jose      | MacArthur | 6331289393 | jmac@dowop.com         |
+| Mary      | Chrisman  | 3171820387 | mjc17@daviscorp.com    |
+| Warren    | Boyer     | 8221722883 | wbman@uptime.net       |
+| Doug      | Finney    | 9821222929 | fennyd@bitspeed.com    |
+| Terry     | Irving    | 5411252093 | NULL                   |
+| Michelle  | Henderson | 8221928273 | NULL                   |
+| William   | Morrow    | 9981722928 | wmorrow@wmorrow.com    |
+| Frank     | Payne     | 9981737464 | NULL                   |
+| Aiden     | Franks    | 8321729283 | kosmo@ispl.com         |
+| Bryce     | Sanders   | 6441824283 | bs@cookery.com         |
+| Carol     | Wanner    | 6831223944 | NULL                   |
+| Brian     | Ranier    | 6231842933 | NULL                   |
+| Marcellin | Lambert   | 8331929302 | mlambert@corkscrew.com |
+| Caroline  | Kale      | 7321223742 | NULL                   |
+| Kerry     | Fernandez | 2211229384 | NULL                   |
+| Tony      | Wong      | 3311692832 | twong@tamilla.org      |
+| Bonnie    | Taft      | 3721223292 | taffygirl@signon.com   |
+| Louis     | Holiday   | 1451223838 | NULL                   |
+| Bobby     | Crum      | 1831828211 | NULL                   |
+| Vic       | Cleaver   | 8111839292 | NULL                   |
+| Roberto   | Goe       | 2771123943 | NULL                   |
+| Davis     | Goodman   | 2771152882 | goody@irvingnet.com    |
++-----------+-----------+------------+------------------------+
+
+select memberid, gender from members where Gender = 'M';
++----------+--------+
+| memberid | gender |
++----------+--------+
+|       10 | M      |
+|       31 | M      |
+|       15 | M      |
+|       32 | M      |
+|       19 | M      |
+|       34 | M      |
+|       29 | M      |
+|       35 | M      |
+|        3 | M      |
+|       33 | M      |
+|        7 | M      |
+|        9 | M      |
+|       26 | M      |
+|       20 | M      |
+|       22 | M      |
+|       28 | M      |
+|       30 | M      |
+|       36 | M      |
++----------+--------+
+
+select memberid, country from members where Country = 'Canada';
++----------+---------+
+| memberid | country |
++----------+---------+
+|       33 | Canada  |
+|       26 | Canada  |
++----------+---------+
+
+select firstname, lastname, region, email, workphone from members where email = 'mlambert@corkscrew.com' or  workphone = '2211223939';
++-----------+-----------+--------+------------------------+------------+
+| firstname | lastname  | region | email                  | workphone  |
++-----------+-----------+--------+------------------------+------------+
+| Marcellin | Lambert   | VA     | mlambert@corkscrew.com | NULL       |
+| Kerry     | Fernandez | VA     | NULL                   | 2211223939 |
++-----------+-----------+--------+------------------------+------------+
