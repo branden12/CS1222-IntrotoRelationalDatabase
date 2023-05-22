@@ -1,25 +1,26 @@
 
-# Homework 4
+# Homework 5
 
 ## Purpose
 
-The goal of this module is to learn how to use functions to better massage your data.
+Now that you have established a strong foundation for SQL, it's time to see how tall you can build upon that knowledge.
 
-## Knowledge
-
-Functions are a powerful tool that gives you more control over how to display data from your queries. Functions have a similar syntax to aggregations. However, while aggregations allow you to perform variety of operations on several rows to return a single result, functions allow you to perform an operation on each row in a query result. 
 ## Tasks
 
-### Study the Books database and create the following queries. (Note: you need to run books.sql to an external site. to create the tables).
+### You will need to use the Books database to answer the questions below. Use any method that you want in order to solve the problems (Subqueries, inner-join/equi-join. outer join, EXISTS)
 
-#### Refer to the MySQL Setup assignment to refresh your memory.
+#### Design the following queries.
 
-- List the number of books, the minimum price, maximum price, and average sales of history books. The format of output is: Number Min Price Max Price Average Sale
+- List the title_name and book type of the books that are published earlier than the earliest biography book
 
-- List the number of books and the average number of pages published by pub_id P01.
+- List the title_name and book type of the books published by 'Abatis Publishers'
 
-- List the number of books and the total sales of the books with price greater than $15.
+- Find the name(s) of the publisher(s) that have not published any book
 
-- For each book type, list the the number of books and the average price. Sort the results by the number of books
+- Find the name(s) of the publisher(s) who have published the computer book.
 
-- For each book type, list the book type and the average number of pages in the books with price greater than $10 in each category, excluding the types where the average number of pages is less than 200. Sort the results by the average number of pages.
+- Find the name(s) of the author(s) that have authored more than one books.
+
+- Find the name(s) of the publisher(s) who published the least expensive book.
+
+- Find the name(s) of the author(s) who wrote the book with the greatest number of pages.
