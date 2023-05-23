@@ -1,47 +1,28 @@
 
-# Homework 8
+# Homework 9
 
 
 
 ## Purpose
 
-The goal of this module is to familiarize yourself with the basic syntax for a MongoDB query.
+The goal of this module is to familiarize yourself with aggregations in  MongoDB.
 ## Tasks
 
-### In this homework, you will need to install MongoDB before you start any coding. Please follow notes from MongoDB Setup to install MongoDB.
+### In this homework, you will need to download the sample data set from pitching.txt
 
-#### In this section, you are going to use the restaurants collection to get information from the database. Please supply the find query along with any other information that the question asks for (Ex. give the name of the restaurant if the question asks for the name).
+#### After download is completed, you will then need to import the sample pitching.csv into your mongo database. To do so, you will need to run command like below:
 
-##### Read Section
+##### Questions:
 
-- Find all restaurants from the borough of "Queens"
+- Find out the number of rows are in the collection `pitching`
 
-- Give me the name of the restaurant that has a restaurant_id of "40377124"
+- Count the number of records that are in the year of 1872
+Count the number of records that is between `year` of 1870 to 1880
 
-- Give me the names of the restaurants that are in building 703. (Hint, there are 6 of them). Use a projection to give the name and address fields of the restaurants
+- Find the average year in the whole pitching collection
 
-- Give me the name of the restaurant that is located on "Spring Street" in building "300". Use a projection to only show the name and address fields of the restaurant
+- Group the players by `year` and return the average `ipouts` per year
 
-- Find all restaurants that have either a cuisine of "American" or a cuisine of "French". Use a projection to only show the name and cuisine of the restaurants
+- Order each team (that is, for each unique combination of `year and team_id`) by the number of pitchers on the team 
 
-- Find all restaurants that received a score greater than 100. Use a projection to only show the name and the grades score of the restaurants
-
-##### Write Section
-
-- Insert an object containing name of 'Charlie', age of 25 and position of 'lecturer' to the users collection
-
-- Insert another user object containing name of 'Alice', age of 20, position of 'student' and grade of 84 to the users collection
-
-- Insert another user object containing name of 'Bob', age of 21, position of 'student' and grade of 89 to the users collection
-
-- Update user object of 'Alice' to grade 95
-
-- Delete user 'Bob'
-
-- Update user of position 'student' to have a new field called homeAddress containing of follwing json:
-
- {
-     street: '1234 Random st.',
-     city: 'Los Angeles',
-     state: 'CA'
- }
+- (EXTRA CREDIT) Which `player_id` has the highest ipouts?
