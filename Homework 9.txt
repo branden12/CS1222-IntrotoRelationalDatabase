@@ -1,0 +1,63 @@
+1. 
+db.pitching.count()
+44139
+
+2.
+db.pitching.count({"year": 1872})
+23
+
+3.
+db.pitching.count({"year": {$gt: 1870}, "year": {$lt: 1880} })
+232
+
+4.
+db.pitching.aggregate({$group:{_id:null, AverageYear: {$avg: "$year" }}})
+{ "_id" : null, "AverageYear" : 1967.7864926708805 }
+
+5.
+db.pitching.aggregate({$group:{_id:"$year", Average_ipouts: {$avg: "$ipouts" }}})
+{ "_id" : 2013, "Average_ipouts" : 180.38567493112947 }
+{ "_id" : 1938, "Average_ipouts" : 284.9780701754386 }
+{ "_id" : 1952, "Average_ipouts" : 256.2230769230769 }
+{ "_id" : 1892, "Average_ipouts" : 439.27272727272725 }
+{ "_id" : 1912, "Average_ipouts" : 260.4761904761905 }
+{ "_id" : 1998, "Average_ipouts" : 208.81891025641025 }
+{ "_id" : 1898, "Average_ipouts" : 412.62068965517244 }
+{ "_id" : 2015, "Average_ipouts" : 160.96786155747836 }
+{ "_id" : 1888, "Average_ipouts" : 477.56198347107437 }
+{ "_id" : 1924, "Average_ipouts" : 288.6842105263158 }
+{ "_id" : 1880, "Average_ipouts" : 548.3030303030303 }
+{ "_id" : 1994, "Average_ipouts" : 174.3069105691057 }
+{ "_id" : 2011, "Average_ipouts" : 184.6987270155587 }
+{ "_id" : 2001, "Average_ipouts" : 199.17484662576686 }
+{ "_id" : 1923, "Average_ipouts" : 309.64953271028037 }
+{ "_id" : 1987, "Average_ipouts" : 240.34968017057568 }
+{ "_id" : 2007, "Average_ipouts" : 181.4442896935933 }
+{ "_id" : 1979, "Average_ipouts" : 268.98325358851673 }
+{ "_id" : 1903, "Average_ipouts" : 380.18709677419355 }
+{ "_id" : 1961, "Average_ipouts" : 271.7437722419929 }
+
+6. Order each team (that is, for each unique combination of year and team_id) by the number of pitchers on the team (go to office hours next week)
+db.pitching.aggregate({$group: {_id: {team: "$team_id", year: "$year"}, Total_Pitchers:{$sum: 1} }})
+{ "_id" : { "team" : "ATL", "year" : 1989 }, "Total_Pitchers" : 23 }
+{ "_id" : { "team" : "CHN", "year" : 1976 }, "Total_Pitchers" : 18 }
+{ "_id" : { "team" : "CHN", "year" : 1903 }, "Total_Pitchers" : 10 }
+{ "_id" : { "team" : "COL", "year" : 1993 }, "Total_Pitchers" : 25 }
+{ "_id" : { "team" : "NYA", "year" : 1926 }, "Total_Pitchers" : 11 }
+{ "_id" : { "team" : "PH1", "year" : 1873 }, "Total_Pitchers" : 3 }
+{ "_id" : { "team" : "NY1", "year" : 1943 }, "Total_Pitchers" : 17 }
+{ "_id" : { "team" : "MIN", "year" : 1972 }, "Total_Pitchers" : 12 }
+{ "_id" : { "team" : "DET", "year" : 1964 }, "Total_Pitchers" : 18 }
+{ "_id" : { "team" : "ARI", "year" : 2014 }, "Total_Pitchers" : 25 }
+{ "_id" : { "team" : "COL", "year" : 1996 }, "Total_Pitchers" : 21 }
+{ "_id" : { "team" : "BRO", "year" : 1946 }, "Total_Pitchers" : 18 }
+{ "_id" : { "team" : "BR2", "year" : 1873 }, "Total_Pitchers" : 2 }
+{ "_id" : { "team" : "KCF", "year" : 1915 }, "Total_Pitchers" : 9 }
+{ "_id" : { "team" : "PIT", "year" : 1950 }, "Total_Pitchers" : 18 }
+{ "_id" : { "team" : "BAL", "year" : 1955 }, "Total_Pitchers" : 23 }
+{ "_id" : { "team" : "TOR", "year" : 1983 }, "Total_Pitchers" : 14 }
+{ "_id" : { "team" : "NYA", "year" : 1956 }, "Total_Pitchers" : 15 }
+{ "_id" : { "team" : "SLN", "year" : 2005 }, "Total_Pitchers" : 20 }
+{ "_id" : { "team" : "CHN", "year" : 1878 }, "Total_Pitchers" : 3 }
+
+7. 
